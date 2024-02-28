@@ -1,21 +1,20 @@
 //
 //  ContentView.swift
-//  Threads
+//  ThreadsCloneApp
 //
-//  Created by Brian on 28/02/2024.
+//  Created by Brian on 27/02/2024.
 //
 
 import SwiftUI
 
 struct ContentView: View {
+    @AppStorage("log_status") var logStatus: Bool = false
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        if logStatus {
+            Text("Main View")
+        } else {
+            LoginView()
         }
-        .padding()
     }
 }
 
